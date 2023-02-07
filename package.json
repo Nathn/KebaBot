@@ -1,0 +1,30 @@
+{
+  "name": "kebabot",
+  "version": "1.0.0",
+  "description": "Some sort of kebab-counting Discord bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "deploy-commands": "node deploy_commands.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nathn/KebaBot.git"
+  },
+  "keywords": [
+    "kebab"
+  ],
+  "author": "Nathn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nathn/KebaBot/issues"
+  },
+  "homepage": "https://github.com/Nathn/KebaBot#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.9.1",
+    "mongoose-mongodb-errors": "^0.0.2"
+  }
+}
