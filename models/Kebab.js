@@ -2,11 +2,10 @@ const mongoose = require('mongoose');
 const mongodbErrorHandler = require('mongoose-mongodb-errors');
 
 const kebabSchema = new mongoose.Schema({
-	userid: {
+	user: {
 		type: String,
 		trim: true,
-		required: true,
-		unique: true,
+		required: true
 	},
 	datetime: {
         type: Date,

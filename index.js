@@ -16,18 +16,16 @@ require('dotenv').config({
 	path: '.env'
 });
 
-/*
 // Connect to our Database and handle an bad connections
 mongoose.connect(process.env.MONGO_URI, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 });
-mongoose.set('useFindAndModify', false);
+mongoose.set('strictQuery', true);
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', (err) => {
 	console.log('Une erreur est survenue avec la base de données : ' + err);
 })
-*/
 
 // Load all models
 require('./models/Kebab');
