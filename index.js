@@ -75,7 +75,7 @@ client.on(Events.InteractionCreate, async interaction => {
 		await command.execute(interaction);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		await interaction.reply({ content: 'Une erreur est survenue lors de l\'exécution de la commande. Zola a dit j\'accuse, moi je m\'excuse.', ephemeral: true });
 	}
 });
 
