@@ -12,10 +12,27 @@ module.exports = {
             { $sort: { count: -1 } }
         ]);
         let leaderboard = '';
-        for (let i = 0; i < kebabs.length; i++) {
+        for (let i = 0; i < Math.min(10, kebabs.length); i++) {
             const kebab = kebabs[i];
             const user = await interaction.client.users.fetch(kebab._id);
-            leaderboard += `${i + 1}. ${user.username} (${kebab.count} kebab${kebab.count > 1 ? 's' : ''})\n`;
+            switch (i) {
+                case 0:
+                    leaderboard += `:crown: `;
+                    break;
+                case 1:
+                    leaderboard += `:second_place: `;
+                    break;
+                case 2:
+                    leaderboard += `:third_place: `;
+                    break;
+                default:
+                    leaderboard += `:medal: `;
+            }
+            if (user == interaction.user) {
+                leaderboard += `**${i + 1}. ${user.username} (${kebab.count} kebab${kebab.count > 1 ? 's' : ''})**\n`;
+            } else {
+                leaderboard += `${i + 1}. ${user.username} (${kebab.count} kebab${kebab.count > 1 ? 's' : ''})\n`;
+            }
         }
         await interaction.reply(leaderboard);
     }
