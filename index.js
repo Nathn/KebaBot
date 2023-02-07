@@ -1,4 +1,4 @@
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js')
+const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js')
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -43,13 +43,15 @@ for (const file of commandFiles) {
 }
 
 client.on('ready', () => {
-	console.log("Bot is online.")
+	console.log("Bot is online.");
 	client.user.setPresence({
 		status: "online", // You can show online, idle....
-		game: {
-			name: "King Burger", // The message shown
-			type: "WATCHING" // PLAYING: WATCHING: LISTENING: STREAMING:
-		}
+		activities: [
+			{
+				name: "King Burger", // The message shown
+				type: ActivityType.Watching // PLAYING: WATCHING: LISTENING: STREAMING:
+			}
+		]
 	});
 })
 
