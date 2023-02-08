@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-        .setName('vomi')
+        .setName('vomito')
         .setDescription('Vommissez un kebab.'),
     async execute(interaction) {
         const Kebab = mongoose.model('Kebab');
