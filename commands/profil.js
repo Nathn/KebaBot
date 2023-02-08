@@ -28,10 +28,12 @@ Votre premier kebab a été mangé le ${kebabs[0].datetime.toLocaleDateString('f
 Votre dernier kebab a été mangé le ${kebabs[kebabs.length - 1].datetime.toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}.`;
             break;
         }
-        if (placeinleaderboard == 1) {
-            reply += '\nVous êtes premier du classement des gros mangeurs de kebabs !';
+        if (placeinleaderboard == 0) {
+            reply += '\nVous n\'êtes pas dans le classement des mangeurs de kebabs.';
+        } else if (placeinleaderboard == 1) {
+            reply += '\nVous êtes premier du classement des plus gros mangeurs de kebabs !';
         } else {
-            reply += `\nVous êtes ${placeinleaderboard}ème du classement des gros mangeurs de kebabs.`;
+            reply += `\nVous êtes ${placeinleaderboard}ème du classement des plus gros mangeurs de kebabs.`;
         }
         await interaction.reply(reply);
     }
