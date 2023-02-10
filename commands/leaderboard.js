@@ -9,7 +9,7 @@ module.exports = {
         const Kebab = mongoose.model('Kebab');
         const kebabs = await Kebab.aggregate([
             { $group: { _id: '$user', count: { $sum: 1 } } },
-            { $sort: { count: -1 } }
+            { $sort: { count: -1, datetime: 1 } }
         ]);
         let leaderboard = '';
         for (let i = 0; i < Math.min(10, kebabs.length); i++) {
