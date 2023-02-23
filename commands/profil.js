@@ -60,17 +60,6 @@ Votre dernier kebab a été mangé le ${kebabs[kebabs.length - 1].datetime.toLoc
                 }
                 break;
         }
-        if (kebabs.length > 1) {
-            // get number of times 2 kebabs were eaten in the same day
-            let kebabstwice = 0;
-            for (let i = 0; i < kebabs.length - 1; i++) {
-                if (kebabs[i].datetime.toLocaleDateString() == kebabs[i + 1].datetime.toLocaleDateString()) {
-                    kebabstwice++;
-                    i++;
-                }
-            }
-            reply += `\nNombre de doublés : ${kebabstwice}\n`;
-        }
         if (customuser) {
             if (placeinleaderboard == 0) {
                 reply += '\nCette personne n\'est pas dans le classement des mangeurs de kebabs.';
