@@ -19,7 +19,8 @@ module.exports = {
         const now = new Date();
         const currentYear = now.getFullYear();
         // If no specified season or it is not valid, use the current season (year)
-        let season = interaction.options.getString("saison") || currentYear;
+        let season =
+            parseInt(interaction.options.getString("saison")) || currentYear;
         if (!season || season < 2022 || season > currentYear) {
             season = currentYear;
         }
