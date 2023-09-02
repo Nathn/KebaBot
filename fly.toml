@@ -7,10 +7,10 @@ app = "kebabot"
 primary_region = "cdg"
 
 [env]
-  PORT = "8080"
+  PORT = "3000"
 
 [http_service]
-  internal_port = 8080
+  internal_port = 3000
   force_https = true
   auto_stop_machines = false
   auto_start_machines = true
