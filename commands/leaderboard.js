@@ -1,16 +1,7 @@
 const { SlashCommandBuilder } = require("discord.js");
 const mongoose = require("mongoose");
 
-function getSeason() {
-    const now = new Date();
-    const currentYear = now.getFullYear();
-    const month = now.getMonth();
-    if (month < 8) {
-        return currentYear - 1;
-    } else {
-        return currentYear;
-    }
-}
+const getCurrentSeason = require("../utils/getCurrentSeason");
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -32,7 +23,7 @@ module.exports = {
         let season = parseInt(interaction.options.getString("saison"));
         // If no specified season or it is not valid, use the current season
         if (!season || season < 2022 || season > currentYear) {
-            season = getSeason();
+            season = getCurrentSeason();
         }
         // Get leaderboard for the kebabs between 1st september of season and 31st august of season+1
         const start = new Date(season, 8, 1); // September 1st of variable season
