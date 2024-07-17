@@ -89,14 +89,19 @@ module.exports = {
                 // calculate the number of days between the first and last kebab
                 const firstKebab = userKebabs[0]?.datetime;
                 const lastKebab = userKebabs[userKebabs.length - 1]?.datetime;
+                console.log(name);
+                console.log(firstKebab, lastKebab);
                 const days =
                     firstKebab && lastKebab
                         ? Math.round(
                               (lastKebab - firstKebab) / (1000 * 60 * 60 * 24)
                           )
                         : 0;
+                console.log(days);
+                console.log(kebabCount);
                 // calculate the ratio for the user (Math.round((kebabs.length / days) * 100) / 100)
                 const ratio = Math.round((kebabCount / days) * 100) / 100;
+                console.log(ratio);
                 // store the ratio for the user in the ratios object
                 ratios[name] = ratio;
             }
